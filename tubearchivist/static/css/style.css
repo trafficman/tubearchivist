@@ -426,6 +426,13 @@ button:hover {
     display: block;
 }
 
+.video-main-theater video {
+    max-height: 85vh;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
 .player-title img {
     width: 30px;
     margin: 10px 10px 10px 0;

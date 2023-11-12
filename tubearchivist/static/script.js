@@ -160,6 +160,27 @@ function reindex(button) {
   }, 500);
 }
 
+// toggle theater mode on video page
+function toggleTheater() {
+  let videoMainElement = document.querySelector('.video-main');
+  let videoMainTheaterElement = document.querySelector('.video-main-theater');
+  let navItemsElement = document.querySelector('.nav-items')
+
+  // check if player is small
+  if (videoMainElement) {
+    navItemsElement.scrollIntoView(true);
+    // swap to large player
+    videoMainElement.classList.replace('video-main', 'video-main-theater');
+  // check if player is big
+  } else if (videoMainTheaterElement) {
+    window.scrollTo(0, 0);
+    // swap to small player
+    videoMainTheaterElement.classList.replace('video-main-theater', 'video-main');
+  } else {
+      console.error('Neither video element found, how did you activate this');
+  }
+}
+
 // download page buttons
 function rescanPending() {
   let apiEndpoint = '/api/task-name/update_subscribed/';
