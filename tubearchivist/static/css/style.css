@@ -158,16 +158,6 @@ button:hover {
     color: var(--accent-font-light);
 }
 
-.top-banner {
-    text-align: center;
-}
-
-.top-banner img {
-    width: 100%;
-    max-width: 700px;
-    content: var(--banner);
-}
-
 .footer {
     margin: 0;
     padding: 20px 0;
@@ -274,6 +264,17 @@ button:hover {
     position: relative;
 }
 
+.top-banner {
+    display: inline-flex;
+    position: absolute;
+}
+
+.top-banner img {
+    width: 100%;
+    max-width: 250px;
+    content: var(--banner);
+}
+
 .nav-items {
     width: 100%;
     display: flex;
@@ -292,9 +293,8 @@ button:hover {
     width: auto;
     display: inline-flex;
     position: absolute;
-    top: 50%;
     right: 0;
-    transform: translate(0,-50%);
+    transform: translate(0,10%);
 }
 
 .nav-icons img {
@@ -1223,14 +1223,17 @@ video:-webkit-full-screen {
         width: 100%;
     }
     .top-nav {
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
         display: flex;
     }
-    .nav-icons {
-        width: 100%;
-        justify-content: center;
+    .top-banner {
+        width: 50%;
         position: unset;
-        transform: unset;
+    }
+    .nav-icons {
+        width: 50%;
+        justify-content: right;
+        position: unset;
     }
     .grid-count {
         display: none;

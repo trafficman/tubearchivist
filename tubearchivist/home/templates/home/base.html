@@ -32,42 +32,41 @@
 </head>
 <body>
     <div class="main-content">
-        <div class="boxed-content">
+        <div class="top-nav">
             <div class="top-banner">
                 <a href="{% url 'home' %}">
                     <img alt="tube-archivist-banner">
                 </a>
             </div>
-            <div class="top-nav">
-                <div class="nav-items">
-                    <a href="{% url 'home' %}">
-                        <div class="nav-item">home</div>
-                    </a>
-                    <a href="{% url 'channel' %}">
-                        <div class="nav-item">channels</div>
-                    </a>
-                    <a href="{% url 'playlist' %}">
-                        <div class="nav-item">playlists</div>
-                    </a>
-                    {% if request.user|has_group:"admin" or request.user.is_staff %}
-                    <a href="{% url 'downloads' %}">
-                        <div class="nav-item">downloads</div>
-                    </a>
+            <div class="nav-icons">
+                <a href="{% url 'search' %}">
+                    <img src="{% static 'img/icon-search.svg' %}" alt="search-icon" title="Search">
+                </a>
+                <a href="{% url 'settings' %}">
+                    <img src="{% static 'img/icon-gear.svg' %}" alt="gear-icon" title="Settings">
+                </a>
+                <a href="{% url 'logout' %}">
+                    <img class="alert-hover" src="{% static 'img/icon-exit.svg' %}" alt="exit-icon" title="Logout">
+                </a>
+            </div>
+            <div class="nav-items">
+                <a href="{% url 'home' %}">
+                    <div class="nav-item">home</div>
+                </a>
+                <a href="{% url 'channel' %}">
+                    <div class="nav-item">channels</div>
+                </a>
+                <a href="{% url 'playlist' %}">
+                    <div class="nav-item">playlists</div>
+                </a>
+                {% if request.user|has_group:"admin" or request.user.is_staff %}
+                <a href="{% url 'downloads' %}">
+                    <div class="nav-item">downloads</div>
+                </a>
                     {% endif %}
                 </div>
-                <div class="nav-icons">
-                    <a href="{% url 'search' %}">
-                        <img src="{% static 'img/icon-search.svg' %}" alt="search-icon" title="Search">
-                    </a>
-                    <a href="{% url 'settings' %}">
-                        <img src="{% static 'img/icon-gear.svg' %}" alt="gear-icon" title="Settings">
-                    </a>
-                    <a href="{% url 'logout' %}">
-                        <img class="alert-hover" src="{% static 'img/icon-exit.svg' %}" alt="exit-icon" title="Logout">
-                    </a>
-                </div>
             </div>
-        </div>
+        
         {% block content %}{% endblock %}
         <div class="boxed-content">
             <div class="pagination">
